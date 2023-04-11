@@ -17,6 +17,7 @@ import dashboard from '../controllers/dashboard';
 import getOrders from '../controllers/getOrders';
 import createOrder from '../controllers/createOrder';
 import getProducts from '../controllers/getProducts';
+import createProductToCustomerStore from "../controllers/createProductToCustomerStore";
 
 router.use(bodyParser.urlencoded({
     extended: true
@@ -33,7 +34,7 @@ router.get('/admin/createOrder',createOrder)
 
 // Get all the artovison products
 router.get('/admin/products/artovision', getArtovisionProducts)
-
+router.post('/admin/product/create',createProductToCustomerStore)
 // Customer Crud Routes
 router.get('/allcustomer',getCustomers)
 router.post('/createCustomer',createCustomer)

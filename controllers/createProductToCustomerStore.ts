@@ -13,7 +13,16 @@ const createProductToCustomerStore = async (req:any,res:any) => {
             password : sh_access_token,
             apiKey : sh_api_key
         })
-        shop.product.create
+        shop.product.create({
+            title : req.body.product.title,
+            body_html : req.body.product.body_html,
+            image : req.body.product.image,
+            tags : "Artovision",
+            product_type : req.body.product.product_type,
+            vendor : req.body.product.vendor,
+            variants : req.body.product.variants
+        })
+        res.status(200).json("Created Successfully")
     } catch (error : any) {
         res.status(400).send({ message: error.message })
     }
