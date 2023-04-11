@@ -1,0 +1,44 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\hk892\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @shopify/shopify-api
+
+PATH: 
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;%NVM_HOME%;%NVM_SYMLINK%;C:\ProgramData\ComposerSetup\bin;C:\Program Files\Git\cmd;D:\xampp\php;C:\Program Files\Handdy\Handdy8\bin;C:\Program Files\Handdy\Handdy8\jre\bin;C:\Windows\System32;C:\Users\hk892\AppData\Local\Microsoft\WindowsApps;C:\Users\hk892\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\hk892\AppData\Roaming\npm;C:\Users\hk892\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\hk892\AppData\Roaming\Composer\vendor\bin;C:\Users\hk892\AppData\Local\GitHubDesktop\bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.19.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'D:\Projects\Xava\backend-shopify\node_modules\bcrypt\lib\binding\napi-v3\bcrypt_lib.node'
+
+npm manifest: 
+  {
+    "dependencies": {
+      "bcrypt": "^5.1.0",
+      "body-parser": "^1.20.2",
+      "cookie-parser": "^1.4.6",
+      "cors": "^2.8.5",
+      "dotenv": "^16.0.3",
+      "express": "^4.18.2",
+      "express-mongo-sanitize": "^2.2.0",
+      "jsonwebtoken": "^9.0.0",
+      "mongoose": "^7.0.0",
+      "multer": "^1.4.5-lts.1"
+    },
+    "devDependencies": {
+      "@types/bcrypt": "^5.0.0",
+      "@types/jsonwebtoken": "^9.0.1",
+      "@types/multer": "^1.4.7"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
