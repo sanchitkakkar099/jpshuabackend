@@ -18,6 +18,7 @@ import getOrders from '../controllers/getOrders';
 import createOrder from '../controllers/createOrder';
 import getProducts from '../controllers/getProducts';
 import createProductToCustomerStore from "../controllers/createProductToCustomerStore";
+import StoreExists from "../controllers/checkStoreExists";
 
 router.use(bodyParser.urlencoded({
     extended: true
@@ -33,7 +34,7 @@ router.post('/admin/getOrders',getOrders)
 router.get('/admin/createOrder',createOrder)
 
 // Get all the artovison products
-router.get('/admin/products/artovision', getArtovisionProducts)
+router.get('/products/artovision', getArtovisionProducts)
 router.post('/admin/product/create',createProductToCustomerStore)
 // Customer Crud Routes
 router.get('/allcustomer',getCustomers)
@@ -44,5 +45,8 @@ router.post('/updateCustomer',updateCustomerDetails)
 // Shopify Authentication Routes
 router.post('/install/app',getShopName)
 router.post('/shopify/callback',ShopifyCallback)
+
+// Check if installed shop store exists in our database
+router.post('/check/store/exists',StoreExists)
 
 module.exports = router;

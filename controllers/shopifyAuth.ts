@@ -25,7 +25,7 @@ const getShopName = (req: any, res: any) => {
     // return res.json("Test Done",shopName)
     const state = nonce();
     // Here is the redirect url is added on which one the shop name is added it will be added
-    const redirectURL = "https://jellyfish-app-wg6fl.ondigitalocean.app/installapp/callback";
+    const redirectURL = "https://38cf-2402-3a80-1bd3-e99f-bcbb-daa2-9cc-9e1e.ngrok-free.app/installapp/callback";
     // Here we are constructing the Shopify App Installation URL
     const shopifyURL = 'https://' + shopName +
 

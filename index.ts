@@ -18,7 +18,7 @@ app.use(cors())
 //       'POST',
 //     ],
 //
-//     allowedHeaders: [
+//     allowedHeaders: [ 
 //       'Content-Type',
 //     ],
 //   };

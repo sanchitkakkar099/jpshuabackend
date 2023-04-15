@@ -3,25 +3,37 @@ import customers from "../schema/customerSchema";
 const Shopify = require('shopify-api-node');
 const createProductToCustomerStore = async (req:any,res:any) => {
     try {
-        let customerId = req.body.customer;
-        let findCustomer = await customers.findOne({email:customerId})
-        let sh_access_token = findCustomer.access_token;
-        let sh_api_key = findCustomer.api_key;
-        let sh_store_url = findCustomer.store_url;
-        const shop = new Shopify({
-            shopName : sh_store_url,
-            password : sh_access_token,
-            apiKey : sh_api_key
-        })
-        shop.product.create({
-            title : req.body.product.title,
-            body_html : req.body.product.body_html,
-            image : req.body.product.image,
-            tags : "Artovision",
-            product_type : req.body.product.product_type,
-            vendor : req.body.product.vendor,
-            variants : req.body.product.variants
-        })
+        let product = req.body.product;
+        let data = JSON.stringify({
+            "product": {
+              "title": `${product.title}`,
+              "body_html": `${product.body_html}`,
+              "vendor": `${product.vendor}`,
+              "product_type": `${product.product_type}`,
+              "status": `${product.status}`,
+              "tags" : `Artovision`,
+              "image" : product.image 
+            }
+          });
+          let config = {
+            method: 'post',
+            maxBodyLength: Infinity,
+            url: 'https://xavatesting.myshopify.com//admin/api/2023-01/products.json',
+            headers: { 
+              'X-Shopify-Access-Token': 'shpua_81c086445ba6fea82e5262fb176820ae', 
+              'Accept': 'application/json', 
+              'Content-Type': 'application/json'
+            },
+            data : data
+          };
+          
+          axios.request(config)
+          .then((response) => {
+            console.log(JSON.stringify(response.data));
+          })
+          .catch((error) => {
+            console.log(error);
+          });
         res.status(200).json("Created Successfully")
     } catch (error : any) {
         res.status(400).send({ message: error.message })
